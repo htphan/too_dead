@@ -37,6 +37,24 @@ module TooDead
       @todo_item = @todo_list.todo_items.find_or_create_by(task_name: item_name)
     end
 
+    def view_list
+      available_list = @user.todo_lists.all
+      if available_list[0] == nil
+        puts "You do not have any current Todo Lists!"
+        puts "Please create a new one:"
+        list_title = gets.chomp
+        access_list(list_title)
+      else
+        @user.list_menu
+        choice = @user.list_choice
+        if choice == "exit"
+          run
+        else
+          access_list(choice)
+        end
+      end
+    end
+
     ## Edits the item's due date
 
     def start

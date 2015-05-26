@@ -13,3 +13,4 @@
 *.a
 mkmf.log
 db/too_dead.db
+db/.DS_Store
