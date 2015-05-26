@@ -31,7 +31,7 @@ module TooDead
         response = gets.chomp.downcase
       end
       if response == "y"
-        @todo_item.update(completed?: true)
+        self.update(completed?: true)
       end
     end
   end
